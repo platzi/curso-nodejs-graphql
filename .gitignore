@@ -194,5 +194,6 @@ $RECYCLE.BIN/
 
 postgres_data
 mysql_data
+.vscode
 
 # End of https://www.toptal.com/developers/gitignore/api/node,windows,linux,macos
