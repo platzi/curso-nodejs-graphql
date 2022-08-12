@@ -10,7 +10,8 @@ class UserService {
     const hash = await bcrypt.hash(data.password, 10);
     const newUser = await models.User.create({
       ...data,
-      password: hash
+      password: hash,
+      role: "admin",
     });
     delete newUser.dataValues.password;
     return newUser;

@@ -7,8 +7,7 @@ const role = Joi.string().min(5);
 
 const createUserDto = Joi.object({
   email: email.required(),
-  password: password.required(),
-  role: role.required()
+  password: password.required()
 });
 
 const updateUserDto = Joi.object({
