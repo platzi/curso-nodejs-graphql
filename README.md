@@ -23,6 +23,7 @@ npm run dev
 npm run start
 ```
 
+# Connect to DB from Docker
 
 ```sh
 docker-compose exec postgres bash
