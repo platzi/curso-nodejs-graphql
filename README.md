@@ -22,3 +22,12 @@ npm run dev
 ```sh
 npm run start
 ```
+
+
+```sh
+docker-compose exec postgres bash
+psql -h localhost -d my_store -U nico
+\d+
+SELECT * FROM users;
+DELETE FROM users WHERE id=<id>;
+```
