@@ -34,7 +34,7 @@ module.exports = {
       createdAt: {
         allowNull: false,
         type: Sequelize.DataTypes.DATE,
-        field: 'create_at',
+        field: 'created_at',
         defaultValue: Sequelize.NOW
       },
       recovery_token: {
