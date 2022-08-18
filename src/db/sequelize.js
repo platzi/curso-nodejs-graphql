@@ -5,7 +5,7 @@ const setupModels = require('./models');
 
 const options = {
   dialect: 'postgres',
-  logging: config.isProd ? false : console.log,
+  logging: config.isDev ? console.log : false,
 }
 
 if (config.isProd) {
