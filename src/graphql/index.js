@@ -1,39 +1,6 @@
 const { ApolloServer } = require('apollo-server-express');
 const { ApolloServerPluginLandingPageGraphQLPlayground } = require('apollo-server-core');
-
-const typeDefs = `
-  type Query {
-    hello: String!
-    getPerson(name: String, age: Int): String
-    getInt(age: Int!): Int
-    getFloat(price: Float): Float
-    getString: String
-    getBoolean: Boolean
-    getID: ID
-    getNumbers(numbers: [Int!]!): [Int]
-    getProduct: Product
-  }
-
-  type Product {
-    id: ID!
-    name: String!
-    price: Float!
-    description: String!
-    image: String!
-    createdAt: String!
-  }
-`;
-// Get = Query
-// POST, PUT, DELETE = Mutations
-// POST = 201
-// POST = CREATE = 201
-// GET = GET DATA
-// PUT = Update
-// DELETE = remove
-
-// Lists
-// [String]
-// [Int]
+const { loadFiles } = require('@graphql-tools/load-files');
 
 const resolvers = {
   Query: {
@@ -60,7 +27,7 @@ const resolvers = {
 
 const useGraphql = async (app) => {
   const server = new ApolloServer({
-    typeDefs,
+    typeDefs: await loadFiles('./src/**/*.graphql'),
     resolvers,
     playground: true,
     plugins: [
