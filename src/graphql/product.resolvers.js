@@ -1,16 +1,15 @@
-const getProduct = (_, { id }) => {
-  return {
-    id,
-    name: 'product 1',
-    price: 100.12,
-    description: 'bla bla bla',
-    image: 'http://image.asas',
-    createdAt: new Date().toISOString()
-  }
+const ProductsService = require('./../services/product.service');
+const service = new ProductsService();
+
+
+const getProduct = async (_, { id }) => {
+  const product = await service.findOne(id);
+  return product;
 }
 
-const getProducts = () => {
-  return [];
+const getProducts = async () => {
+  const products = await service.find({});
+  return products;
 }
 
 module.exports = { getProduct, getProducts };
