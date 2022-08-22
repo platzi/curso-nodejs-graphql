@@ -22,7 +22,7 @@ const deleteProduct = async (_, {id }) => {
   return id;
 }
 
-const getProductsByCategory = async (parent) => {
+const getProductsByCategory = (parent) => {
   const id = parent.dataValues.id;
   return service.getByCategory(id);
 }
