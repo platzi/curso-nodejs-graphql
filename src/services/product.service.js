@@ -62,6 +62,9 @@ class ProductsService {
     await product.destroy();
     return { id };
   }
+async getByCategory(id) {
+  return await models.Product.findAll({where: {categoryId: id}});
+}
 
 }
 
