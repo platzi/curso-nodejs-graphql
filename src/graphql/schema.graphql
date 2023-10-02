@@ -10,6 +10,7 @@ type Mutation {
   addProduct(dto: CreateProductDto!): Product
   updateProduct(id: ID!, dto: UpdateProductDto!): Product
   deleteProduct(id: ID!): ID
+  addCategory(dto: CreateCategoryDto!): Category
 }
 
 type Product {
@@ -55,4 +56,9 @@ input UpdateProductDto {
   description: String
   image: String
   categoryId: ID
+}
+
+input CreateCategoryDto {
+  name: String!
+  image: String!
 }
